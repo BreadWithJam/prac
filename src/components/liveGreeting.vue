@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>Welcome, {{ Cname }}!</h1>
+    <h1>Welcome, {{ Username }}!</h1>
     <p>Input your name here:</p>
     <input type="text" placeholder="Name" v-model = "Cname"/>
 </div>
@@ -10,13 +10,18 @@
 import { ref } from 'vue'
 
 export default{
-    setup(){
-        const Cname = ref('Jam')
-    
-    return{
+  data(){
+    const Cname = ref ('Jamyca')
+    return { 
         Cname,
-         }
-    }
+  }
+},
+
+computed:{
+   Username(){
+    return `${this.Cname}`
+   }
+}
 }
 </script>
 
